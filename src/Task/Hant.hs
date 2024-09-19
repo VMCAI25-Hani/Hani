@@ -16,7 +16,7 @@ import System.FilePath ((</>))
 import Hant.Analysis.Coverage (coverageLiteratureCase, coverageSynthesizedCase)
 
 basePath :: FilePath
-basePath = "./cases/Shan"
+basePath = "./cases/hani"
 
 defaultBound :: Int
 defaultBound = 3

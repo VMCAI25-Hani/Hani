@@ -26,6 +26,7 @@ import Hant.Util (LiteratureCase (bound, name, path))
 import Text.Printf (printf)
 import Data.Time (getCurrentTime, diffUTCTime)
 import Control.Exception (try, SomeException)
+import System.Timeout (timeout)
 
 data Mode = Sequential | Parallel | NoPruning
   deriving (Eq, Show)
@@ -103,7 +104,13 @@ noPruningAnalyzeHanGuidedByTraces b han ts = do
   capabilityCount <- getNumCapabilities
   mapM_ (atomically . writeTQueue taskQueue) ts
   workers <- replicateM capabilityCount $ async $ worker b han taskQueue checkResultQueue
-  checker (length ts) 0 checkResultQueue workers
+  result <- timeout 3600000000 (checker (length ts) 0 checkResultQueue workers)
+  case result of
+    Nothing -> do
+      mapM_ cancel workers
+      mapM_ ((try :: IO a -> IO (Either SomeException a)) . wait) workers
+      putStrLn "timeout"
+    Just _ -> putStr ""
 
 checker ::
   Int ->

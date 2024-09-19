@@ -44,4 +44,4 @@ WORKDIR /hani
 RUN stack build
 
 # Set the default command
-CMD ["stack", "run", "+RTS", "-N", "--", "parallel", "experiment1"]
+CMD ["/bin/bash", "-c", "stack run +RTS -N -- parallel experiment1 && stack run +RTS -N -- coverage experiment1"]
