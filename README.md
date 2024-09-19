@@ -5,7 +5,7 @@
   <img src="./img/logo.png" width="200" />
 </p>
 
-`hani` is a testing framework for hybrid automata networks. It utilizes event and bound sequences as verification instructions, encoding both these instruction and the HAN under verification as SMT formulas. 
+`hani` is a verification framework for hybrid automata networks. It utilizes event and bound sequences as verification instructions, encoding both these instruction and the HAN under verification as SMT formulas. 
 
 ### Preliminary
 
