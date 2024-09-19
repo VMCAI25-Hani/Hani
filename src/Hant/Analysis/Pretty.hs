@@ -84,10 +84,10 @@ printIntCount sds = do
 
 printTraceCount :: Int -> IO ()
 printTraceCount n = do
-  putStrLn $ "test cases: " ++ show n
+  putStrLn $ "verification instructions: " ++ show n
 
 emptyBox :: String
-emptyBox = "┌───┐\n│   │\n└───┘"
+emptyBox = "+---+\n|   |\n+___+"
 
 invisibleBox :: String
 invisibleBox = "     \n     \n     "
@@ -115,9 +115,9 @@ syncArrowWithInfoStr info =
 seal :: String -> String
 seal info =
   let len = maximum $ map length (lines info)
-      fstLine = "┌" ++ replicate len '─' ++ "┐\n"
-      midLines = unlines $ map (\l -> "│" ++ l ++ "│") (lines info)
-      lstLine = "└" ++ replicate len '─' ++ "┘"
+      fstLine = "+" ++ replicate len '─' ++ "+\n"
+      midLines = unlines $ map (\l -> "|" ++ l ++ "|") (lines info)
+      lstLine = "+" ++ replicate len '─' ++ "+"
    in fstLine ++ midLines ++ lstLine
 
 padding :: String -> String
