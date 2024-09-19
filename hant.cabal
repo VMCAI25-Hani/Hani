@@ -1,0 +1,153 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           hant
+version:        0.1.0.0
+description:    Please see the README on GitHub at <>
+homepage:       https://github.com/FM24-Hant/Hant#readme
+bug-reports:    https://github.com/FM24-Hant/Hant/issues
+author:         anonymous
+maintainer:     anonymous
+copyright:      anonymous
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/FM24-Hant/Hant
+
+library
+  exposed-modules:
+      Hant.Analysis.Coverage
+      Hant.Analysis.Decoder
+      Hant.Analysis.Encoder
+      Hant.Analysis.Guided
+      Hant.Analysis.LocMap
+      Hant.Analysis.Memo
+      Hant.Analysis.Offset
+      Hant.Analysis.ParallelVerification
+      Hant.Analysis.Pretty
+      Hant.Analysis.Trace
+      Hant.Analysis.UnsatCore
+      Hant.Analysis.Validation
+      Hant.Ast.Diagram
+      Hant.Ast.Diagram.Parser
+      Hant.Parser
+      Hant.Pretty
+      Hant.Synthesis.Synthesizer
+      Hant.Util
+      Hant.Uxf.HtmlProcessor
+      Hant.Uxf.Uxf
+      Lib
+      Task.Hant
+  other-modules:
+      Paths_hant
+  hs-source-dirs:
+      src
+  default-extensions:
+      ImportQualifiedPost
+      ScopedTypeVariables
+      OverloadedStrings
+      TupleSections
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2
+  build-depends:
+      async
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , criterion
+    , directory
+    , filepath
+    , lens
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , random
+    , sbv
+    , split
+    , stm
+    , text
+    , time
+    , universe-base
+    , xeno
+  default-language: Haskell2010
+
+executable hant-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_hant
+  hs-source-dirs:
+      app
+  default-extensions:
+      ImportQualifiedPost
+      ScopedTypeVariables
+      OverloadedStrings
+      TupleSections
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      async
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , criterion
+    , directory
+    , filepath
+    , hant
+    , lens
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , random
+    , sbv
+    , split
+    , stm
+    , text
+    , time
+    , universe-base
+    , xeno
+  default-language: Haskell2010
+
+test-suite hant-test
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      ParseSpec
+      Paths_hant
+  hs-source-dirs:
+      test
+  default-extensions:
+      ImportQualifiedPost
+      ScopedTypeVariables
+      OverloadedStrings
+      TupleSections
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2 -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      async
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , criterion
+    , directory
+    , filepath
+    , hant
+    , lens
+    , megaparsec
+    , mtl
+    , parser-combinators
+    , random
+    , sbv
+    , split
+    , stm
+    , sydtest
+    , text
+    , time
+    , universe-base
+    , xeno
+  default-language: Haskell2010

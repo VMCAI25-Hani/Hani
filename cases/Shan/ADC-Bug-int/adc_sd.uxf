@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text/>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSequenceAllInOne</id>
+    <coordinates>
+      <x>110</x>
+      <y>90</y>
+      <w>900</w>
+      <h>420</h>
+    </coordinates>
+    <panel_attributes>title=ADC
+obj=sensor~a
+obj=converter~b
+obj=PC~c
+
+
+combinedFragment=loop(3,5) ~loop1
+b-&gt;&gt;&gt;c : (report, report, report);
+c-&gt;&gt;&gt;b : (response, response, response);
+--
+
+
+
+combinedFragment=int (p=1)~int2
+a-&gt;&gt;&gt;b : (send_data,send_data,send_data);
+c-&gt;&gt;&gt;b : (reset,reset,reset);
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1050</x>
+      <y>90</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>(response-report)&gt;=5
+(reset-send_data)&gt;=2
+(response-report)&lt;9</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

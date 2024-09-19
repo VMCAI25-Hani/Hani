@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+  <component id="controller">
+    <param name="T_send" type="label" local="false" />
+    <param name="T_rec" type="label" local="false" />
+    <location id="1" name="loc1" x="370.0" y="210.0" />
+    <location id="2" name="loc2" x="613.0" y="207.0" />
+    <location id="3" name="loc3" x="856.0" y="207.0" />
+    <transition source="1" target="2">
+      <label>T_send</label>
+      <labelposition x="-24.0" y="-28.0" />
+    </transition>
+    <transition source="2" target="3">
+      <label>T_rec</label>
+      <labelposition x="-18.0" y="-28.0" />
+    </transition>
+  </component>
+  <component id="P_1">
+    <param name="x1" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="id1" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="T12" type="label" local="false" />
+    <param name="T13" type="label" local="false" />
+    <param name="T11" type="label" local="false" />
+    <param name="T_send" type="label" local="false" />
+    <param name="T_rec" type="label" local="false" />
+    <param name="et1" type="label" local="true" />
+    <param name="et2" type="label" local="true" />
+    <param name="et3" type="label" local="true" />
+    <param name="et4" type="label" local="true" />
+    <param name="et5" type="label" local="true" />
+    <param name="et6" type="label" local="true" />
+    <param name="et7" type="label" local="true" />
+    <param name="et8" type="label" local="true" />
+    <param name="et9" type="label" local="true" />
+    <param name="et10" type="label" local="true" />
+    <param name="et11" type="label" local="true" />
+    <param name="et12" type="label" local="true" />
+    <location id="1" name="id0" x="409.0" y="226.0">
+      <flow>x1'==1 &amp; id1'==0</flow>
+    </location>
+    <location id="2" name="id1" x="779.0" y="225.0">
+      <invariant>x1&lt;=3</invariant>
+      <flow>x1'==1 &amp; id1'==0</flow>
+    </location>
+    <location id="3" name="id2" x="407.0" y="435.0">
+      <flow>x1'==1 &amp; id1'==0</flow>
+    </location>
+    <location id="4" name="id3" x="774.0" y="427.0">
+      <flow>x1'==1 &amp; id1'==0</flow>
+    </location>
+    <location id="5" name="P1_error1" x="229.0" y="333.0" />
+    <location id="6" name="P1_error2" x="563.0" y="614.0" />
+    <location id="7" name="P1_error3" x="992.0" y="320.0" />
+    <transition source="2" target="1">
+      <label>T12</label>
+      <guard>x1&lt;=3</guard>
+      <assignment>x1:=0&amp;id1:=1</assignment>
+      <labelposition x="-48.0" y="-62.0" width="100.0" height="64.0" />
+      <middlepoint x="596.0" y="203.5" />
+    </transition>
+    <transition source="1" target="2">
+      <label>T13</label>
+      <guard>id1==0</guard>
+      <assignment>x1:=0</assignment>
+      <labelposition x="-29.0" y="2.0" />
+      <middlepoint x="593.0" y="254.5" />
+    </transition>
+    <transition source="3" target="2">
+      <label>T11</label>
+      <guard>id1==0</guard>
+      <assignment>x1:=0</assignment>
+      <labelposition x="-72.0" y="-2.0" width="64.0" height="58.0" />
+    </transition>
+    <transition source="1" target="4">
+      <label>T_send</label>
+      <guard>x1&gt;3 &amp; id1==1</guard>
+      <labelposition x="66.0" y="8.0" />
+    </transition>
+    <transition source="4" target="3">
+      <label>T_rec</label>
+      <assignment>id1:=0</assignment>
+      <labelposition x="-24.0" y="11.0" />
+    </transition>
+    <transition source="1" target="5">
+      <label>et1</label>
+      <guard>x1&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="5">
+      <label>et2</label>
+      <guard>x1&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="4" target="5">
+      <label>et3</label>
+      <guard>x1&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="5">
+      <label>et4</label>
+      <guard>x1&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="6">
+      <label>et5</label>
+      <guard>id1&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="1" target="6">
+      <label>et6</label>
+      <guard>id1&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="6">
+      <label>et7</label>
+      <guard>id1&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="4" target="6">
+      <label>et8</label>
+      <guard>id1&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="4" target="7">
+      <label>et9</label>
+      <guard>id1&gt;2</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="7">
+      <label>et10</label>
+      <guard>id1&gt;2</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="1" target="7">
+      <label>et11</label>
+      <guard>id1&gt;2</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="7">
+      <label>et12</label>
+      <guard>id1&gt;2</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+  </component>
+  <component id="P_2">
+    <param name="x2" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="id2" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="T22" type="label" local="false" />
+    <param name="T23" type="label" local="false" />
+    <param name="T21" type="label" local="false" />
+    <param name="T_send" type="label" local="false" />
+    <param name="T_rec" type="label" local="false" />
+    <param name="et1" type="label" local="true" />
+    <param name="et2" type="label" local="true" />
+    <param name="et3" type="label" local="true" />
+    <param name="et4" type="label" local="true" />
+    <param name="et5" type="label" local="true" />
+    <param name="et6" type="label" local="true" />
+    <param name="et7" type="label" local="true" />
+    <param name="et8" type="label" local="true" />
+    <param name="et9" type="label" local="true" />
+    <param name="et10" type="label" local="true" />
+    <param name="et11" type="label" local="true" />
+    <param name="et12" type="label" local="true" />
+    <location id="1" name="id4" x="409.0" y="226.0">
+      <flow>x2'==1 &amp; id2'==0</flow>
+    </location>
+    <location id="2" name="id5" x="779.0" y="225.0">
+      <invariant>x2&lt;=3</invariant>
+      <flow>x2'==1 &amp; id2'==0</flow>
+    </location>
+    <location id="3" name="id6" x="407.0" y="435.0">
+      <flow>x2'==1 &amp; id2'==0</flow>
+    </location>
+    <location id="4" name="id7" x="774.0" y="427.0">
+      <flow>x2'==1 &amp; id2'==0</flow>
+    </location>
+    <location id="5" name="P2_error1" x="229.0" y="333.0" />
+    <location id="6" name="P2_error2" x="563.0" y="614.0" />
+    <transition source="2" target="1">
+      <label>T22</label>
+      <guard>x2&lt;=3</guard>
+      <assignment>x2:=0&amp;id2:=2</assignment>
+      <labelposition x="-48.0" y="-62.0" width="100.0" height="64.0" />
+      <middlepoint x="596.0" y="203.5" />
+    </transition>
+    <transition source="1" target="2">
+      <label>T23</label>
+      <guard>id2==0</guard>
+      <assignment>x2:=0</assignment>
+      <labelposition x="-29.0" y="2.0" />
+      <middlepoint x="593.0" y="254.5" />
+    </transition>
+    <transition source="3" target="2">
+      <label>T21</label>
+      <guard>id2==0</guard>
+      <assignment>x2:=0</assignment>
+      <labelposition x="-72.0" y="-2.0" width="64.0" height="58.0" />
+    </transition>
+    <transition source="1" target="4">
+      <label>T_send</label>
+      <guard>x2&gt;3 &amp; id2==2</guard>
+      <labelposition x="66.0" y="8.0" />
+    </transition>
+    <transition source="4" target="3">
+      <label>T_rec</label>
+      <assignment>id2:=0</assignment>
+      <labelposition x="-24.0" y="11.0" />
+    </transition>
+    <transition source="1" target="5">
+      <label>et1</label>
+      <guard>x2&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="5">
+      <label>et2</label>
+      <guard>x2&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="4" target="5">
+      <label>et3</label>
+      <guard>x2&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="5">
+      <label>et4</label>
+      <guard>x2&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="6">
+      <label>et5</label>
+      <guard>id2&lt;2</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="1" target="6">
+      <label>et6</label>
+      <guard>id2&lt;2</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="6">
+      <label>et7</label>
+      <guard>id2&lt;2</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="4" target="6">
+      <label>et8</label>
+      <guard>id2&lt;2</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+  </component>
+  <component id="system">
+    <param name="T_send" type="label" local="false" />
+    <param name="T_rec" type="label" local="false" />
+    <param name="T12" type="label" local="false" />
+    <param name="T13" type="label" local="false" />
+    <param name="T11" type="label" local="false" />
+    <param name="T22" type="label" local="false" />
+    <bind component="controller" as="controller_1" x="225.0" y="129.0">
+      <map key="T_send">T_send</map>
+      <map key="T_rec">T_rec</map>
+    </bind>
+    <bind component="P_1" as="P_1_1" x="251.0" y="254.0">
+      <map key="T12">T12</map>
+      <map key="T13">T13</map>
+      <map key="T11">T11</map>
+      <map key="T_send">T_send</map>
+      <map key="T_rec">T_rec</map>
+    </bind>
+    <bind component="P_2" as="P_2_1" x="280.0" y="437.0">
+      <map key="T22">T22</map>
+      <map key="T23">T13</map>
+      <map key="T21">T11</map>
+      <map key="T_send">T_send</map>
+      <map key="T_rec">T_rec</map>
+    </bind>
+  </component>
+</sspaceex>
+

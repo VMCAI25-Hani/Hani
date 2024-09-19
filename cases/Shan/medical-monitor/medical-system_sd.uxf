@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSequenceAllInOne</id>
+    <coordinates>
+      <x>120</x>
+      <y>20</y>
+      <w>560</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>title=medical_system
+obj=monitor~a
+obj=processor~b
+
+
+combinedFragment=loop(2,10)~loop1
+a-&gt;&gt;&gt;b: (receive,receive,receive)[u:=t]
+--
+
+combinedFragment=int(p=1)(1,2) ~int1
+b-&gt;&gt;&gt;a: (push,push,push)
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

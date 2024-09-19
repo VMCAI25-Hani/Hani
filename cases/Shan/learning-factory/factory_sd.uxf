@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSequenceAllInOne</id>
+    <coordinates>
+      <x>0</x>
+      <y>30</y>
+      <w>1020</w>
+      <h>560</h>
+    </coordinates>
+    <panel_attributes>title=Factory
+obj=belt~a
+obj=station~b
+obj=warehouse~c
+obj=manipulator~d
+
+
+combinedFragment=loop(2,3)~loop1
+b-&gt;&gt;&gt;a : (place,place,place);
+a-&gt;&gt;&gt;d : (take,take,take)[d1:=belt_products];
+--
+
+combinedFragment=int (p=2)(1,2)~int2
+b-&gt;&gt;&gt;a : (produce,produce,produce);
+a-&gt;&gt;&gt;c : (store,store,store);
+--
+
+combinedFragment=int (p=1)(1,2)~int2
+c-&gt;&gt;&gt;a : (retrieval,retrieval,retrieval);
+a-&gt;&gt;&gt;d : (consume,consume,consume);
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>50</x>
+      <y>660</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>(take-place)&lt;5
+(take-place)&gt;1
+(store-produce)&lt;1
+(consume-retrieval)&lt;1
+(take-place)&lt;20</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Haskell stack
+.stack-work/
+dist-newstyle
+*~
+
+# IDE 
+# fleet
+.fleet
+
+# vscode
+.vscode
+

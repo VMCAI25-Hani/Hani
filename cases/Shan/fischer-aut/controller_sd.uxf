@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSequenceAllInOne</id>
+    <coordinates>
+      <x>330</x>
+      <y>260</y>
+      <w>490</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>title=controller
+obj=P1~a
+obj=P2~b
+
+
+combinedFragment=loop(2,5)~loop1
+a-&gt;&gt;&gt;b : (T_send,T_send,T_send);
+b-&gt;&gt;&gt;a : (T_rec,T_rec,T_rec);
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

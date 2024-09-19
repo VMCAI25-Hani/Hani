@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>470</x>
+      <y>70</y>
+      <w>20</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>type=initial</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>390</x>
+      <y>220</y>
+      <w>180</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>running
+--
+'belt_products=0
+
+-.
+belt_products&gt;=0
+valign=top
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>80</y>
+      <w>190</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+init:;[belt_products:=0]</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>120</y>
+      <w>350</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+place:;[belt_products:=(belt_products+1)]</panel_attributes>
+    <additional_attributes>330.0;120.0;10.0;10.0;10.0;40.0;330.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>270</y>
+      <w>350</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+take:;[belt_products:=(belt_products-1)]</panel_attributes>
+    <additional_attributes>330.0;10.0;10.0;60.0;10.0;80.0;330.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>190</y>
+      <w>520</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+produce:;[belt_products:=(belt_products+1)]</panel_attributes>
+    <additional_attributes>10.0;60.0;200.0;10.0;200.0;40.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>280</y>
+      <w>500</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+store:;[belt_products:=(belt_products-1)]</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;30.0;200.0;50.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>40</x>
+      <y>320</y>
+      <w>420</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+retrieval:;[belt_products:=(belt_products+1)]</panel_attributes>
+    <additional_attributes>370.0;10.0;140.0;220.0;180.0;220.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>320</y>
+      <w>320</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+consume:;[belt_products:=(belt_products-1)]</panel_attributes>
+    <additional_attributes>20.0;10.0;110.0;230.0;190.0;230.0;80.0;10.0</additional_attributes>
+  </element>
+</diagram>

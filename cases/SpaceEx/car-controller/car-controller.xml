@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+  <component id="car_controller">
+    <param name="loopcount1" type="real" local="true" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="intcount1" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="intcount2" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="intcount3" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="T1" type="label" local="false" />
+    <param name="T3" type="label" local="false" />
+    <param name="T4" type="label" local="false" />
+    <param name="recovery" type="label" local="false" />
+    <param name="t1" type="label" local="true" />
+    <param name="t2" type="label" local="true" />
+    <param name="t3" type="label" local="true" />
+    <param name="t4" type="label" local="true" />
+    <param name="t5" type="label" local="true" />
+    <param name="t6" type="label" local="true" />
+    <param name="t7" type="label" local="true" />
+    <param name="t8" type="label" local="true" />
+    <param name="t9" type="label" local="true" />
+    <param name="t10" type="label" local="true" />
+    <param name="t11" type="label" local="true" />
+    <param name="t12" type="label" local="true" />
+    <param name="t13" type="label" local="true" />
+    <param name="t14" type="label" local="true" />
+    <param name="t15" type="label" local="true" />
+    <param name="t16" type="label" local="true" />
+    <param name="t17" type="label" local="true" />
+    <param name="t18" type="label" local="true" />
+    <param name="t19" type="label" local="true" />
+    <param name="t20" type="label" local="true" />
+    <param name="t21" type="label" local="true" />
+    <param name="t22" type="label" local="true" />
+    <param name="t23" type="label" local="true" />
+    <param name="t24" type="label" local="true" />
+    <param name="t25" type="label" local="true" />
+    <param name="t26" type="label" local="true" />
+    <param name="t27" type="label" local="true" />
+    <param name="t28" type="label" local="true" />
+    <param name="t29" type="label" local="true" />
+    <param name="t30" type="label" local="true" />
+    <param name="t31" type="label" local="true" />
+    <param name="t32" type="label" local="true" />
+    <param name="t33" type="label" local="true" />
+    <param name="t34" type="label" local="true" />
+    <param name="t35" type="label" local="true" />
+    <location id="1" name="loc1" x="319.0" y="249.0" />
+    <location id="2" name="loc2" x="586.0" y="250.0" />
+    <location id="3" name="loc3" x="844.0" y="249.0" />
+    <location id="4" name="loc4" x="1124.0" y="245.0" />
+    <location id="5" name="loc5" x="534.0" y="431.0" />
+    <location id="6" name="loc6" x="931.0" y="427.0" />
+    <location id="7" name="loc7" x="306.0" y="613.0" />
+    <location id="8" name="loc8" x="551.0" y="615.0" />
+    <location id="9" name="loc9" x="844.0" y="611.0" />
+    <location id="10" name="loc10" x="1133.0" y="610.0" />
+    <transition source="1" target="2">
+      <label>t1</label>
+      <assignment>loopcount1:=0</assignment>
+      <labelposition x="-27.0" y="-24.0" width="70.0" height="52.0" />
+    </transition>
+    <transition source="2" target="3">
+      <label>T1</label>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="2">
+      <label>t2</label>
+      <guard>loopcount1&lt;5</guard>
+      <assignment>loopcount1:=loopcount1+1</assignment>
+      <labelposition x="-24.0" y="-75.0" width="170.0" height="58.0" />
+      <middlepoint x="731.0" y="141.5" />
+    </transition>
+    <transition source="2" target="4">
+      <label>t3</label>
+      <guard>loopcount1&gt;=5</guard>
+      <labelposition x="82.0" y="-21.0" width="118.0" height="52.0" />
+      <middlepoint x="930.0" y="139.5" />
+    </transition>
+    <transition source="1" target="5">
+      <label>t4</label>
+      <assignment>intcount1:=1</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="5" target="6">
+      <label>recovery</label>
+      <labelposition x="-30.0" y="17.0" width="68.0" height="52.0" />
+    </transition>
+    <transition source="6" target="1">
+      <label>t5</label>
+      <guard>intcount1==1</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="5">
+      <label>t6</label>
+      <assignment>intcount1:=2</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="2">
+      <label>t7</label>
+      <guard>intcount1==2</guard>
+      <labelposition x="-35.0" y="-32.0" />
+    </transition>
+    <transition source="3" target="5">
+      <label>t8</label>
+      <assignment>intcount1:=3</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="3">
+      <label>t9</label>
+      <guard>intcount1==3</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="4" target="5">
+      <label>t10</label>
+      <assignment>intcount1:=4</assignment>
+      <labelposition x="92.0" y="-72.0" width="98.0" height="66.0" />
+    </transition>
+    <transition source="6" target="4">
+      <label>t11</label>
+      <guard>intcount1==4</guard>
+      <labelposition x="0.0" y="0.0" width="68.0" height="54.0" />
+    </transition>
+    <transition source="1" target="7">
+      <label>t12</label>
+      <assignment>intcount2:=1</assignment>
+      <labelposition x="0.0" y="0.0" width="108.0" height="70.0" />
+    </transition>
+    <transition source="7" target="8">
+      <label>T3</label>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="8" target="1">
+      <label>t13</label>
+      <guard>intcount2==1</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="7">
+      <label>t14</label>
+      <assignment>intcount2:=2</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="8" target="2">
+      <label>t15</label>
+      <guard>intcount2==2</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="7">
+      <label>t16</label>
+      <assignment>intcount2:=3</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="8" target="3">
+      <label>t17</label>
+      <guard>intcount2==3</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="4" target="7">
+      <label>t18</label>
+      <assignment>intcount2:=4</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="8" target="4">
+      <label>t19</label>
+      <guard>intcount2==4</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="5" target="7">
+      <label>t20</label>
+      <assignment>intcount2:=5</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="8" target="5">
+      <label>t21</label>
+      <guard>intcount2==5</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="7">
+      <label>t22</label>
+      <assignment>intcount2:=6</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="8" target="6">
+      <label>t23</label>
+      <guard>intcount2==6</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="1" target="9">
+      <label>t24</label>
+      <assignment>intcount3:=1</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="9" target="10">
+      <label>T4</label>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="10" target="1">
+      <label>t25</label>
+      <guard>intcount3==1</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="9">
+      <label>t26</label>
+      <assignment>intcount3:=2</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="10" target="2">
+      <label>t27</label>
+      <guard>intcount3==2</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="9">
+      <label>t28</label>
+      <assignment>intcount3:=3</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="10" target="3">
+      <label>t29</label>
+      <guard>intcount3==3</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="4" target="9">
+      <label>t30</label>
+      <assignment>intcount3:=4</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="10" target="4">
+      <label>t31</label>
+      <guard>intcount3==4</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="5" target="9">
+      <label>t32</label>
+      <assignment>intcount3:=5</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="10" target="5">
+      <label>t33</label>
+      <guard>intcount3==5</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="9">
+      <label>t34</label>
+      <assignment>intcount3:=6</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="10" target="6">
+      <label>t35</label>
+      <guard>intcount3==6</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+  </component>
+  <component id="sensor">
+    <param name="time" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="acce" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="speed" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="T1" type="label" local="false" />
+    <param name="T2" type="label" local="true" />
+    <param name="T3" type="label" local="false" />
+    <param name="T4" type="label" local="false" />
+    <param name="T5" type="label" local="true" />
+    <param name="T6" type="label" local="true" />
+    <param name="T7" type="label" local="true" />
+    <param name="T8" type="label" local="true" />
+    <param name="T9" type="label" local="true" />
+    <param name="recovery" type="label" local="false" />
+    <param name="et1" type="label" local="true" />
+    <param name="et2" type="label" local="true" />
+    <param name="et3" type="label" local="true" />
+    <param name="et4" type="label" local="true" />
+    <param name="et5" type="label" local="true" />
+    <param name="et6" type="label" local="true" />
+    <param name="et7" type="label" local="true" />
+    <param name="et8" type="label" local="true" />
+    <param name="et9" type="label" local="true" />
+    <param name="et10" type="label" local="true" />
+    <location id="1" name="brake" x="383.0" y="163.0">
+      <invariant>acce&gt;=-10</invariant>
+      <flow>time'==1 &amp; acce'==-1 &amp; speed'==acce</flow>
+    </location>
+    <location id="2" name="balance" x="714.0" y="155.0">
+      <invariant>acce==0</invariant>
+      <flow>time'==1 &amp; acce'==0 &amp; speed'==0</flow>
+    </location>
+    <location id="3" name="forward" x="1048.0" y="153.0">
+      <invariant>acce&lt;=10 &amp; speed&lt;=100</invariant>
+      <flow>time'==1 &amp; acce'==1 &amp; speed'==acce</flow>
+    </location>
+    <location id="4" name="broken" x="456.0" y="463.0">
+      <invariant>acce==0 &amp; speed==0</invariant>
+      <flow>time'==1 &amp; acce'==0 &amp; speed'==0</flow>
+    </location>
+    <location id="5" name="init" x="979.0" y="452.0">
+      <invariant>acce==0 &amp; speed==0</invariant>
+      <flow>time'==0 &amp; acce'==0 &amp; speed'==0</flow>
+    </location>
+    <location id="6" name="sensor_error" x="710.0" y="630.0" />
+    <transition source="4" target="5">
+      <label>recovery</label>
+      <assignment>speed:=0</assignment>
+      <labelposition x="0.0" y="0.0" width="100.0" height="58.0" />
+    </transition>
+    <transition source="5" target="3">
+      <label>T1</label>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="1" target="4">
+      <label>T6</label>
+      <assignment>acce:=0</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="1">
+      <label>T4</label>
+      <guard>acce==0</guard>
+      <labelposition x="-45.0" y="-74.0" width="90.0" height="68.0" />
+      <middlepoint x="557.5" y="128.0" />
+    </transition>
+    <transition source="1" target="2">
+      <label>T5</label>
+      <assignment>acce:=0</assignment>
+      <labelposition x="-69.0" y="20.0" width="140.0" height="54.0" />
+      <middlepoint x="549.5" y="174.0" />
+    </transition>
+    <transition source="3" target="2">
+      <label>T2</label>
+      <assignment>acce:=0</assignment>
+      <labelposition x="-42.0" y="-68.0" width="96.0" height="70.0" />
+      <middlepoint x="882.0" y="115.0" />
+    </transition>
+    <transition source="2" target="3">
+      <label>T3</label>
+      <guard>acce==0</guard>
+      <labelposition x="-61.0" y="22.0" width="110.0" height="58.0" />
+      <middlepoint x="884.0" y="175.0" />
+    </transition>
+    <transition source="2" target="4">
+      <label>T7</label>
+      <assignment>acce:=0</assignment>
+      <labelposition x="-72.0" y="-36.0" />
+    </transition>
+    <transition source="4" target="2">
+      <label>T9</label>
+      <labelposition x="26.0" y="-26.0" />
+      <middlepoint x="695.0" y="264.0" />
+    </transition>
+    <transition source="3" target="4">
+      <label>T8</label>
+      <assignment>acce:=0</assignment>
+      <labelposition x="0.0" y="0.0" width="76.0" height="52.0" />
+    </transition>
+    <transition source="4" target="6">
+      <label>et1</label>
+      <guard>time&lt;0</guard>
+      <labelposition x="-75.0" y="22.0" />
+      <middlepoint x="514.0" y="615.5" />
+    </transition>
+    <transition source="5" target="6">
+      <label>et2</label>
+      <guard>time&lt;0</guard>
+      <labelposition x="-9.0" y="-46.0" />
+      <middlepoint x="825.5" y="525.0" />
+    </transition>
+    <transition source="1" target="6">
+      <label>et3</label>
+      <guard>time&lt;0</guard>
+      <labelposition x="-66.0" y="-44.0" />
+      <middlepoint x="509.5" y="419.5" />
+    </transition>
+    <transition source="2" target="6">
+      <label>et4</label>
+      <guard>time&lt;0</guard>
+      <labelposition x="-57.0" y="-22.0" />
+      <middlepoint x="655.0" y="389.5" />
+    </transition>
+    <transition source="3" target="6">
+      <label>et5</label>
+      <guard>time&lt;0</guard>
+      <labelposition x="-7.0" y="-70.0" />
+      <middlepoint x="829.0" y="364.5" />
+    </transition>
+    <transition source="4" target="6">
+      <label>et6</label>
+      <guard>acce&lt;0</guard>
+      <labelposition x="-71.0" y="-5.0" />
+    </transition>
+    <transition source="1" target="6">
+      <label>et7</label>
+      <guard>acce&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="6">
+      <label>et8</label>
+      <guard>acce&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="6">
+      <label>et9</label>
+      <guard>acce&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="5" target="6">
+      <label>et10</label>
+      <guard>acce&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+  </component>
+  <component id="controller">
+    <param name="unit" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="shut_down" type="label" local="true" />
+    <param name="T1" type="label" local="false" />
+    <param name="T3" type="label" local="false" />
+    <param name="T4" type="label" local="false" />
+    <param name="recovery" type="label" local="false" />
+    <param name="et1" type="label" local="true" />
+    <param name="et2" type="label" local="true" />
+    <location id="1" name="controlling" x="395.0" y="322.0">
+      <flow>unit'==1</flow>
+    </location>
+    <location id="2" name="down" x="727.0" y="318.0">
+      <flow>unit'==0</flow>
+    </location>
+    <location id="3" name="controller_error" x="579.0" y="534.0" />
+    <transition source="1" target="1">
+      <label>T1</label>
+      <labelposition x="-77.0" y="-26.0" />
+      <middlepoint x="-89.0" y="-36.0" />
+    </transition>
+    <transition source="1" target="1">
+      <label>T3</label>
+      <labelposition x="-78.0" y="9.0" />
+      <middlepoint x="-88.0" y="61.0" />
+    </transition>
+    <transition source="1" target="1">
+      <label>T4</label>
+      <labelposition x="-21.0" y="30.0" />
+      <middlepoint x="7.0" y="95.0" />
+    </transition>
+    <transition source="1" target="2">
+      <label>shut_down</label>
+      <labelposition x="-21.0" y="-69.0" width="90.0" height="68.0" />
+      <middlepoint x="562.5" y="275.0" />
+    </transition>
+    <transition source="2" target="1">
+      <label>recovery</label>
+      <labelposition x="-32.0" y="36.0" width="78.0" height="50.0" />
+    </transition>
+    <transition source="1" target="3">
+      <label>et1</label>
+      <guard>unit&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="3">
+      <label>et2</label>
+      <guard>unit&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+  </component>
+  <component id="system">
+    <param name="T1" type="label" local="false" />
+    <param name="T3" type="label" local="false" />
+    <param name="T4" type="label" local="false" />
+    <param name="recovery" type="label" local="false" />
+    <bind component="car_controller" as="car_controller_1" x="326.0" y="326.0" width="136.0" height="96.0">
+      <map key="T1">T1</map>
+      <map key="T3">T3</map>
+      <map key="T4">T4</map>
+      <map key="recovery">recovery</map>
+    </bind>
+    <bind component="sensor" as="sensor_1" x="327.0" y="482.0" width="132.0" height="98.0">
+      <map key="T1">T1</map>
+      <map key="T3">T3</map>
+      <map key="T4">T3</map>
+      <map key="recovery">recovery</map>
+    </bind>
+    <bind component="controller" as="controller_1" x="326.0" y="617.0" width="122.0" height="86.0">
+      <map key="T1">T1</map>
+      <map key="T3">T3</map>
+      <map key="T4">T4</map>
+      <map key="recovery">recovery</map>
+    </bind>
+  </component>
+</sspaceex>
+

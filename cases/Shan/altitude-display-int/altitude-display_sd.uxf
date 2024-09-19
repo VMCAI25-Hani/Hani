@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSequenceAllInOne</id>
+    <coordinates>
+      <x>30</x>
+      <y>30</y>
+      <w>930</w>
+      <h>860</h>
+    </coordinates>
+    <panel_attributes>title=altitude_display
+obj=PC~a
+obj=IO~b
+
+
+combinedFragment=loop(3,5)[interval:=1,start:=0]~loop1
+combinedFragment=alt~alt1
+b-&gt;&gt;&gt;a : (d_display,d_display,d_display)[truth:=altitude];
+..
+combinedFragment=alt~alt2
+b-&gt;&gt;&gt;a : (c_display,c_display,c_display)[truth:=altitude];
+..
+b-&gt;&gt;&gt;a : (g_display,g_display,g_display)[truth:=altitude];
+--
+--
+--
+
+combinedFragment=int(p=1)~int1
+combinedFragment=alt~alt3
+b-&gt;&gt;&gt;a : (d_read,d_read,d_read)[truth:=altitude,cal:=altitude];
+..
+combinedFragment=alt~alt4
+b-&gt;&gt;&gt;a : (c_read,c_read,c_read)[truth:=altitude,cal:=altitude]
+..
+b-&gt;&gt;&gt;a : (g_read,g_read,g_read)[truth:=altitude,cal:=altitude]
+--
+--
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>890</x>
+      <y>0</y>
+      <w>20</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>type=initial</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>10</y>
+      <w>280</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+tank2_init:;[q2:=0,inq2:=0,outq2:=0]</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>120</x>
+      <y>290</y>
+      <w>180</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>half-flow2
+--
+'q2=('inq2-'outq2)
+'inq2&gt;0
+'inq2&lt;=2
+'outq2&gt;=1
+-.
+q2&gt;=0
+q2&lt;=100
+valign=top
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>40</x>
+      <y>520</y>
+      <w>180</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>full-flow2
+--
+'q2=('inq2-'outq2)
+'inq2&gt;0
+'inq2&lt;=2
+'outq2&gt;=1
+-.
+
+valign=top
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>810</x>
+      <y>110</y>
+      <w>180</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>empty_unflow2
+--
+'q2=0
+'inq2=0
+'outq2&gt;=1
+-.
+
+valign=top
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1010</x>
+      <y>290</y>
+      <w>180</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>half-unflow2
+--
+'q2=('inq2-'outq2)
+'inq2=0
+'outq2&gt;=1
+-.
+q2&gt;=0
+q2&lt;=100
+valign=top
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1200</x>
+      <y>560</y>
+      <w>180</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>full-unflow2
+--
+'q2=('inq2-'outq2)
+'inq2=0
+'outq2&gt;=1
+-.
+
+valign=top
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>570</y>
+      <w>1010</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+noflowin2</panel_attributes>
+    <additional_attributes>10.0;10.0;990.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>150</y>
+      <w>340</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+flowto</panel_attributes>
+    <additional_attributes>320.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>230</y>
+      <w>230</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+T21</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>410</y>
+      <w>160</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+T22:q2=100;</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1090</x>
+      <y>400</y>
+      <w>220</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+T23</panel_attributes>
+    <additional_attributes>200.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>220</y>
+      <w>230</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+T24</panel_attributes>
+    <additional_attributes>210.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>320</x>
+      <y>110</y>
+      <w>180</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>empty-flow2
+--
+'q2=('inq2-'outq2)
+'inq2&gt;0
+'inq2&lt;=2
+'outq2&gt;=1
+-.
+
+valign=top
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1210</x>
+      <y>30</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>(success, reachable)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>190</y>
+      <w>540</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+T25</panel_attributes>
+    <additional_attributes>10.0;150.0;520.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>530</x>
+      <y>800</y>
+      <w>180</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>success
+--
+'q2=0
+'inq2=0
+'outq2&gt;=1
+-.
+
+valign=top
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>110</x>
+      <y>650</y>
+      <w>440</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+forward1:inq2&gt;=0&amp;&amp;outq2&gt;=0&amp;&amp;q2&lt;=100;</panel_attributes>
+    <additional_attributes>10.0;10.0;420.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>410</y>
+      <w>500</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+forward2:inq2&gt;=0&amp;&amp;outq2&gt;=0&amp;&amp;q2&lt;=100;</panel_attributes>
+    <additional_attributes>10.0;10.0;340.0;390.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>230</y>
+      <w>420</w>
+      <h>590</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+forward3:inq2&gt;=0&amp;&amp;outq2&gt;=0&amp;&amp;q2&lt;=100;</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;570.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>220</y>
+      <w>440</w>
+      <h>600</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+forward4:inq2&gt;=0&amp;&amp;outq2&gt;=0&amp;&amp;q2&lt;=100;</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;580.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>660</x>
+      <y>400</y>
+      <w>530</w>
+      <h>420</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+forward5:inq2&gt;=0&amp;&amp;outq2&gt;=0&amp;&amp;q2&lt;=100;</panel_attributes>
+    <additional_attributes>400.0;10.0;10.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>670</y>
+      <w>600</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+forward6:inq2&gt;=0&amp;&amp;outq2&gt;=0&amp;&amp;q2&lt;=100;</panel_attributes>
+    <additional_attributes>580.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+</diagram>

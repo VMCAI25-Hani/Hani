@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSequenceAllInOne</id>
+    <coordinates>
+      <x>280</x>
+      <y>170</y>
+      <w>800</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>title=controller
+obj=Ring~a
+obj=ST1~b
+obj=ST2~c
+
+combinedFragment=loop(1,3)~loop1
+b-&gt;&gt;&gt;a : (sendR,sendR,sendR);
+c-&gt;&gt;&gt;a : (recR,recR,recR);
+a-&gt;&gt;&gt;b : (Rsend,Rsend,Rsend)[x1:=x];
+a-&gt;&gt;&gt;c : (Rrec,Rrec,Rrec);
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+  <component id="monitor">
+    <param name="t" type="real" local="false" d1="1" d2="1" dynamics="any" />
+    <param name="acquire" type="label" local="false" />
+    <param name="push" type="label" local="false" />
+    <param name="receive" type="label" local="false" />
+    <param name="t1" type="label" local="true" />
+    <param name="t2" type="label" local="true" />
+    <param name="t3" type="label" local="true" />
+    <param name="t4" type="label" local="true" />
+    <param name="t5" type="label" local="true" />
+    <param name="t6" type="label" local="true" />
+    <param name="t7" type="label" local="true" />
+    <param name="t9" type="label" local="true" />
+    <param name="t10" type="label" local="true" />
+    <param name="t11" type="label" local="true" />
+    <param name="e1" type="label" local="true" />
+    <param name="e2" type="label" local="true" />
+    <param name="e3" type="label" local="true" />
+    <param name="e4" type="label" local="true" />
+    <param name="e5" type="label" local="true" />
+    <param name="e6" type="label" local="true" />
+    <param name="e7" type="label" local="true" />
+    <param name="e8" type="label" local="true" />
+    <param name="e9" type="label" local="true" />
+    <param name="shared1" type="real" local="false" d1="1" d2="1" dynamics="any" />
+    <location id="1" name="P1" x="696.0" y="741.0">
+      <flow>t'==0 &amp; shared1'==0</flow>
+    </location>
+    <location id="2" name="P2" x="695.0" y="626.0">
+      <flow>t'==0 &amp; shared1'==0</flow>
+    </location>
+    <location id="3" name="P3" x="336.0" y="623.0">
+      <flow>t'==0 &amp; shared1'==0</flow>
+    </location>
+    <location id="4" name="P4" x="253.0" y="296.0">
+      <flow>t'==0 &amp; shared1'==0</flow>
+    </location>
+    <location id="5" name="P7" x="715.0" y="448.0">
+      <flow>t'==0 &amp; shared1'==0</flow>
+    </location>
+    <location id="6" name="P9" x="511.0" y="255.0">
+      <flow>t'==0 &amp; shared1'==0</flow>
+    </location>
+    <location id="7" name="P8" x="878.0" y="255.0">
+      <flow>t'==0 &amp; shared1'==0</flow>
+    </location>
+    <location id="8" name="P5" x="512.0" y="140.0">
+      <flow>t'==0 &amp; shared1'==0</flow>
+    </location>
+    <location id="9" name="P6" x="826.0" y="139.0">
+      <flow>t'==0 &amp; shared1'==0</flow>
+    </location>
+    <location id="10" name="monitor_error" x="1350.0" y="576.0">
+      <flow>t'==0 &amp; shared1'==0</flow>
+    </location>
+    <transition source="1" target="2">
+      <label>acquire</label>
+      <assignment>t:=t+2</assignment>
+      <labelposition x="69.0" y="-20.0" />
+    </transition>
+    <transition source="2" target="5">
+      <label>t10</label>
+      <assignment>t:=t+6</assignment>
+      <labelposition x="75.0" y="-16.0" />
+    </transition>
+    <transition source="3" target="4">
+      <label>t2</label>
+      <assignment>t:=t+3</assignment>
+      <labelposition x="-89.0" y="-18.0" />
+      <middlepoint x="246.0" y="427.5" />
+    </transition>
+    <transition source="3" target="4">
+      <label>t3</label>
+      <assignment>t:=t+4</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="4">
+      <label>t4</label>
+      <assignment>t:=t+5</assignment>
+      <labelposition x="25.0" y="-14.0" />
+      <middlepoint x="348.0" y="389.5" />
+    </transition>
+    <transition source="4" target="8">
+      <label>t5</label>
+      <assignment>t:=t+3</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="3">
+      <label>t1</label>
+      <assignment>t:=t+6</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="8" target="9">
+      <label>t6</label>
+      <guard>t&lt;=13</guard>
+      <assignment>t:=t+2</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="9" target="2">
+      <label>t7</label>
+      <labelposition x="19.0" y="1.0" />
+      <middlepoint x="1159.5" y="208.0" />
+    </transition>
+    <transition source="5" target="6">
+      <label>t11</label>
+      <assignment>t:=t+3</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="5" target="7">
+      <label>push</label>
+      <assignment>t:=t+4</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="2">
+      <label>t9</label>
+      <labelposition x="-66.0" y="13.0" />
+    </transition>
+    <transition source="7" target="2">
+      <label>receive</label>
+      <assignment>shared1:=t</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="1" target="10">
+      <label>e1</label>
+      <guard>t&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="10">
+      <label>e2</label>
+      <guard>t&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="10">
+      <label>e3</label>
+      <guard>t&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="4" target="10">
+      <label>e4</label>
+      <guard>t&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="8" target="10">
+      <label>e5</label>
+      <guard>t&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="9" target="10">
+      <label>e6</label>
+      <guard>t&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="5" target="10">
+      <label>e7</label>
+      <guard>t&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="7" target="10">
+      <label>e9</label>
+      <guard>t&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="10">
+      <label>e9</label>
+      <guard>t&lt;0</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+  </component>
+  <component id="processor">
+    <param name="u" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="v" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="j" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="push" type="label" local="false" />
+    <param name="receive" type="label" local="false" />
+    <param name="c1" type="label" local="true" />
+    <param name="c2" type="label" local="true" />
+    <param name="c3" type="label" local="true" />
+    <param name="c4" type="label" local="true" />
+    <param name="c5" type="label" local="true" />
+    <param name="e1" type="label" local="true" />
+    <param name="e2" type="label" local="true" />
+    <param name="e3" type="label" local="true" />
+    <param name="shared2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" />
+    <location id="1" name="calculating" x="495.0" y="243.0" width="182.0" height="114.0">
+      <invariant>j&lt;=20</invariant>
+      <flow>u'==0 &amp; v'==1 &amp; j'==2</flow>
+    </location>
+    <location id="2" name="receiving" x="913.0" y="231.0" width="176.0" height="108.0">
+      <flow>u'==1 &amp; v'==0 &amp; j'==0</flow>
+    </location>
+    <location id="3" name="idle" x="701.0" y="532.0" width="206.0" height="94.0">
+      <flow>u'==0 &amp; v'==0 &amp; j'==0</flow>
+    </location>
+    <location id="4" name="processor_error" x="1149.0" y="545.0" width="170.0" height="88.0">
+      <flow>u'==1 &amp; v'==0 &amp; j'==0</flow>
+    </location>
+    <transition source="2" target="1">
+      <label>push</label>
+      <assignment>v:=10</assignment>
+      <labelposition x="-18.0" y="-63.0" />
+      <middlepoint x="702.0" y="165.0" />
+    </transition>
+    <transition source="2" target="1">
+      <label>c1</label>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="1" target="2">
+      <label>c2</label>
+      <assignment>j:=0</assignment>
+      <labelposition x="-10.0" y="20.0" />
+      <middlepoint x="704.0" y="297.0" />
+    </transition>
+    <transition source="3" target="1">
+      <label>c4</label>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="1" target="3">
+      <label>c3</label>
+      <assignment>j:=0</assignment>
+      <labelposition x="-79.0" y="3.0" />
+      <middlepoint x="536.0" y="428.5" />
+    </transition>
+    <transition source="2" target="3">
+      <label>c5</label>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="2">
+      <label>receive</label>
+      <assignment>u:=shared2</assignment>
+      <labelposition x="33.0" y="2.0" />
+      <middlepoint x="887.0" y="410.5" />
+    </transition>
+    <transition source="3" target="4">
+      <label>e1</label>
+      <guard>j&gt;3</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="1" target="4">
+      <label>e2</label>
+      <guard>j&gt;3</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="4">
+      <label>e3</label>
+      <guard>j&gt;3</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+  </component>
+  <component id="medical">
+    <param name="loopcount" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="push" type="label" local="false" />
+    <param name="receive" type="label" local="false" />
+    <param name="intcount" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="intmark" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="shared2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="shared1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" />
+    <param name="t1" type="label" local="true" />
+    <param name="t2" type="label" local="true" />
+    <param name="t3" type="label" local="true" />
+    <param name="t4" type="label" local="true" />
+    <param name="t5" type="label" local="true" />
+    <param name="t6" type="label" local="true" />
+    <param name="t7" type="label" local="true" />
+    <param name="t8" type="label" local="true" />
+    <param name="t9" type="label" local="true" />
+    <param name="t10" type="label" local="true" />
+    <param name="t11" type="label" local="true" />
+    <location id="1" name="loc1" x="452.0" y="227.0">
+      <flow>intcount'==0 &amp; intmark'==0 &amp; loopcount'==0</flow>
+    </location>
+    <location id="2" name="loc2" x="948.0" y="219.0" />
+    <location id="3" name="loc3" x="236.0" y="379.0">
+      <flow>intcount'==0 &amp; intmark'==0 &amp; loopcount'==0</flow>
+    </location>
+    <location id="4" name="loc4" x="687.0" y="341.0" />
+    <location id="5" name="loc5" x="487.0" y="612.0" />
+    <location id="6" name="loc6" x="840.0" y="610.0" />
+    <transition source="1" target="2">
+      <label>receive</label>
+      <guard>loopcount&lt;2</guard>
+      <assignment>shared2:=shared1</assignment>
+      <labelposition x="-17.0" y="-62.0" width="136.0" height="62.0" />
+      <middlepoint x="722.5" y="177.5" />
+    </transition>
+    <transition source="3" target="1">
+      <label>t1</label>
+      <assignment>loopcount:=0</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="1">
+      <label>t2</label>
+      <guard>loopcount&lt;2</guard>
+      <assignment>loopcount:=loopcount+1</assignment>
+      <labelposition x="-79.0" y="10.0" width="162.0" height="60.0" />
+    </transition>
+    <transition source="1" target="4">
+      <label>t3</label>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="5" target="6">
+      <label>push</label>
+      <labelposition x="-23.0" y="9.0" />
+    </transition>
+    <transition source="3" target="5">
+      <label>t4</label>
+      <guard>intcount&lt;2</guard>
+      <assignment>intmark:=1</assignment>
+      <labelposition x="0.0" y="0.0" width="98.0" height="50.0" />
+    </transition>
+    <transition source="6" target="3">
+      <label>t5</label>
+      <guard>intmark==1</guard>
+      <assignment>intcount:=intcount+1</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="1" target="5">
+      <label>t6</label>
+      <guard>intcount&lt;2</guard>
+      <assignment>intmark:=2</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="1">
+      <label>t7</label>
+      <guard>intmark==2</guard>
+      <assignment>intcount:=intcount+1</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="5">
+      <label>t8</label>
+      <guard>intcount&lt;2</guard>
+      <assignment>intmark:=3</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="2">
+      <label>t9</label>
+      <guard>intmark==3</guard>
+      <assignment>intcount:=intcount+1</assignment>
+      <labelposition x="0.0" y="0.0" width="138.0" height="70.0" />
+    </transition>
+    <transition source="4" target="5">
+      <label>t10</label>
+      <guard>intcount&lt;2</guard>
+      <assignment>intmark:=4</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="4">
+      <label>t11</label>
+      <guard>intmark==4</guard>
+      <assignment>intcount:=intcount+1</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+  </component>
+  <component id="system">
+    <param name="t" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="acquire" type="label" local="false" />
+    <param name="push" type="label" local="false" />
+    <param name="receive" type="label" local="false" />
+    <param name="shared1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="shared2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <bind component="monitor" as="monitor_1" x="231.0" y="208.0">
+      <map key="t">t</map>
+      <map key="acquire">acquire</map>
+      <map key="push">push</map>
+      <map key="receive">receive</map>
+      <map key="shared1">shared1</map>
+    </bind>
+    <bind component="processor" as="processor_1" x="228.0" y="374.0">
+      <map key="push">push</map>
+      <map key="receive">receive</map>
+      <map key="shared2">shared2</map>
+    </bind>
+    <bind component="medical" as="medical_1" x="234.0" y="519.0">
+      <map key="push">push</map>
+      <map key="receive">receive</map>
+      <map key="shared2">shared2</map>
+      <map key="shared1">shared1</map>
+    </bind>
+  </component>
+</sspaceex>
+

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+  <component id="converter">
+    <param name="index" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="ready" type="label" local="false" />
+    <param name="reset" type="label" local="false" />
+    <param name="done" type="label" local="false" />
+    <param name="send_data" type="label" local="false" />
+    <param name="report" type="label" local="false" />
+    <param name="response" type="label" local="false" />
+    <param name="t1" type="label" local="true" />
+    <param name="t2" type="label" local="true" />
+    <param name="t3" type="label" local="true" />
+    <param name="t4" type="label" local="true" />
+    <location id="1" name="wait" x="329.0" y="284.0">
+      <invariant>index&gt;=0</invariant>
+      <flow>index'==0</flow>
+    </location>
+    <location id="2" name="reset" x="705.0" y="280.0">
+      <invariant>index&gt;=0</invariant>
+      <flow>index'==0</flow>
+    </location>
+    <location id="3" name="handle" x="332.0" y="457.0">
+      <invariant>index&gt;=0</invariant>
+      <flow>index'==0</flow>
+    </location>
+    <location id="4" name="postedtask" x="709.0" y="460.0">
+      <invariant>index&gt;=0</invariant>
+      <flow>index'==0</flow>
+    </location>
+    <location id="5" name="error" x="525.0" y="624.0">
+      <flow>index'==0</flow>
+    </location>
+    <transition source="1" target="2">
+      <label>ready</label>
+      <labelposition x="-17.0" y="-43.0" />
+      <middlepoint x="519.0" y="226.0" />
+    </transition>
+    <transition source="2" target="1">
+      <label>reset</label>
+      <guard>index&gt;=0</guard>
+      <assignment>index:=0</assignment>
+      <labelposition x="-37.0" y="19.0" width="82.0" height="74.0" />
+      <middlepoint x="517.0" y="300.0" />
+    </transition>
+    <transition source="3" target="4">
+      <label>report</label>
+      <labelposition x="-18.0" y="-28.0" />
+      <middlepoint x="521.5" y="436.5" />
+    </transition>
+    <transition source="4" target="3">
+      <label>response</label>
+      <labelposition x="-20.0" y="10.0" width="72.0" height="50.0" />
+      <middlepoint x="520.5" y="496.5" />
+    </transition>
+    <transition source="3" target="1">
+      <label>done</label>
+      <labelposition x="-74.0" y="-15.0" />
+      <middlepoint x="308.5" y="372.5" />
+    </transition>
+    <transition source="1" target="3">
+      <label>send_data</label>
+      <guard>index&gt;=0</guard>
+      <assignment>index:=index+1</assignment>
+      <labelposition x="12.0" y="-38.0" width="108.0" height="70.0" />
+      <middlepoint x="353.5" y="370.5" />
+    </transition>
+    <transition source="3" target="5">
+      <label>t1</label>
+      <guard>index&gt;3</guard>
+      <labelposition x="-64.0" y="3.0" />
+    </transition>
+    <transition source="4" target="5">
+      <label>t2</label>
+      <guard>index&gt;3</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="5">
+      <label>t3</label>
+      <guard>index&gt;3</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="1" target="5">
+      <label>t4</label>
+      <guard>index&gt;3</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+  </component>
+  <component id="PC">
+    <param name="reset" type="label" local="false" />
+    <param name="response" type="label" local="false" />
+    <param name="report" type="label" local="false" />
+    <location id="1" name="computing" x="562.0" y="272.0" />
+    <transition source="1" target="1">
+      <label>reset</label>
+      <labelposition x="-105.0" y="-18.0" />
+      <middlepoint x="-106.0" y="5.0" />
+    </transition>
+    <transition source="1" target="1">
+      <label>response</label>
+      <labelposition x="-23.0" y="20.0" width="74.0" height="50.0" />
+      <middlepoint x="5.0" y="105.0" />
+    </transition>
+    <transition source="1" target="1">
+      <label>report</label>
+      <labelposition x="13.0" y="-19.0" />
+      <middlepoint x="111.0" y="7.0" />
+    </transition>
+  </component>
+  <component id="sensor">
+    <param name="send_data" type="label" local="false" />
+    <location id="1" name="sensoring" x="451.0" y="214.0" />
+    <transition source="1" target="1">
+      <label>send_data</label>
+      <labelposition x="14.0" y="-23.0" width="114.0" height="50.0" />
+      <middlepoint x="121.0" y="2.0" />
+    </transition>
+  </component>
+  <component id="ADC">
+    <param name="loopcount" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="intmark" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="report" type="label" local="false" />
+    <param name="response" type="label" local="false" />
+    <param name="reset" type="label" local="false" />
+    <param name="t1" type="label" local="true" />
+    <param name="t2" type="label" local="true" />
+    <param name="t3" type="label" local="true" />
+    <param name="t4" type="label" local="true" />
+    <param name="t5" type="label" local="true" />
+    <param name="t6" type="label" local="true" />
+    <param name="t7" type="label" local="true" />
+    <param name="t8" type="label" local="true" />
+    <param name="t9" type="label" local="true" />
+    <param name="t10" type="label" local="true" />
+    <param name="t11" type="label" local="true" />
+    <param name="t12" type="label" local="true" />
+    <param name="t13" type="label" local="true" />
+    <param name="send_data" type="label" local="false" />
+    <param name="intmark2" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="t14" type="label" local="true" />
+    <param name="t15" type="label" local="true" />
+    <param name="t16" type="label" local="true" />
+    <param name="t17" type="label" local="true" />
+    <param name="t18" type="label" local="true" />
+    <param name="t19" type="label" local="true" />
+    <param name="t20" type="label" local="true" />
+    <param name="t21" type="label" local="true" />
+    <param name="t22" type="label" local="true" />
+    <param name="t23" type="label" local="true" />
+    <param name="t24" type="label" local="true" />
+    <param name="t25" type="label" local="true" />
+    <param name="t26" type="label" local="true" />
+    <param name="t27" type="label" local="true" />
+    <param name="time" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="reporttime" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="responsetime" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <param name="t28" type="label" local="true" />
+    <location id="1" name="loc1" x="401.0" y="186.0">
+      <flow>time'==0</flow>
+    </location>
+    <location id="2" name="loc2" x="657.0" y="152.0">
+      <flow>time'==0</flow>
+    </location>
+    <location id="3" name="loc3" x="905.0" y="224.0">
+      <flow>time'==0</flow>
+    </location>
+    <location id="4" name="loc4" x="248.0" y="342.0">
+      <flow>time'==0</flow>
+    </location>
+    <location id="5" name="loc5" x="509.0" y="506.0">
+      <flow>time'==0</flow>
+    </location>
+    <location id="6" name="loc6" x="850.0" y="510.0">
+      <flow>time'==0</flow>
+    </location>
+    <location id="7" name="loc7" x="1032.0" y="316.0">
+      <flow>time'==0</flow>
+    </location>
+    <location id="8" name="loc8" x="309.0" y="742.0">
+      <flow>time'==0</flow>
+    </location>
+    <location id="9" name="loc9" x="956.0" y="742.0">
+      <flow>time'==0</flow>
+    </location>
+    <location id="10" name="loc10" x="1144.0" y="123.0" />
+    <transition source="1" target="2">
+      <label>report</label>
+      <assignment>reporttime:=time</assignment>
+      <labelposition x="-19.0" y="5.0" />
+    </transition>
+    <transition source="2" target="3">
+      <label>response</label>
+      <assignment>responsetime:=time</assignment>
+      <labelposition x="-19.0" y="10.0" />
+    </transition>
+    <transition source="5" target="6">
+      <label>send_data</label>
+      <labelposition x="-22.0" y="-31.0" />
+    </transition>
+    <transition source="4" target="1">
+      <label>t1</label>
+      <assignment>loopcount:=0</assignment>
+      <labelposition x="-40.0" y="-48.0" />
+    </transition>
+    <transition source="3" target="4">
+      <label>t2</label>
+      <guard>loopcount&lt;5</guard>
+      <assignment>loopcount:=loopcount+1</assignment>
+      <labelposition x="-48.0" y="1.0" width="150.0" height="62.0" />
+    </transition>
+    <transition source="4" target="7">
+      <label>t3</label>
+      <guard>loopcount&gt;=5</guard>
+      <labelposition x="-64.0" y="11.0" width="106.0" height="64.0" />
+    </transition>
+    <transition source="4" target="5">
+      <label>t4</label>
+      <assignment>intmark:=1</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="4">
+      <label>t5</label>
+      <guard>intmark==1</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="1" target="5">
+      <label>t6</label>
+      <assignment>intmark:=1</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="1">
+      <label>t7</label>
+      <guard>intmark==2</guard>
+      <labelposition x="65.0" y="24.0" />
+    </transition>
+    <transition source="7" target="5">
+      <label>t8</label>
+      <assignment>intmark:=3</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="7">
+      <label>t9</label>
+      <guard>intmark==3</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="5">
+      <label>t10</label>
+      <assignment>intmark:=4</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="2">
+      <label>t11</label>
+      <guard>intmark==4</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="5">
+      <label>t12</label>
+      <assignment>intmark:=5</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="3">
+      <label>t13</label>
+      <guard>intmark==5</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="8" target="9">
+      <label>reset</label>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="4" target="8">
+      <label>t14</label>
+      <assignment>intmark2:=1</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="9" target="4">
+      <label>t15</label>
+      <guard>intmark2==1</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="1" target="8">
+      <label>t16</label>
+      <assignment>intmark2:=2</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="9" target="1">
+      <label>t17</label>
+      <guard>intmark2==2</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="5" target="8">
+      <label>t18</label>
+      <assignment>intmark2:=3</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="9" target="5">
+      <label>t19</label>
+      <guard>intmark2==3</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="2" target="8">
+      <label>t20</label>
+      <assignment>intmark2:=4</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="9" target="2">
+      <label>t21</label>
+      <guard>intmark2==4</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="8">
+      <label>t22</label>
+      <assignment>intmark2:=5</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="9" target="3">
+      <label>t23</label>
+      <guard>intmark2==5</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="6" target="8">
+      <label>t24</label>
+      <assignment>intmark2:=6</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="9" target="6">
+      <label>t25</label>
+      <guard>intmark2==6</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="7" target="8">
+      <label>t26</label>
+      <assignment>intmark2:=7</assignment>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="9" target="7">
+      <label>t27</label>
+      <guard>intmark2==7</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+    <transition source="3" target="10">
+      <label>t28</label>
+      <guard>responsetime-reporttime&gt;=1</guard>
+      <labelposition x="0.0" y="0.0" />
+    </transition>
+  </component>
+  <component id="system">
+    <param name="reset" type="label" local="false" x="150.0" y="29.0" />
+    <param name="send_data" type="label" local="false" x="150.0" y="67.0" />
+    <param name="report" type="label" local="false" x="150.0" y="113.0" />
+    <param name="response" type="label" local="false" x="150.0" y="134.0" />
+    <param name="ready" type="label" local="false" x="151.0" y="94.0" />
+    <param name="done" type="label" local="false" />
+    <bind component="PC" as="PC_1" x="282.0" y="378.0" width="120.0" height="90.0">
+      <map key="reset">reset</map>
+      <map key="response">response</map>
+      <map key="report">report</map>
+    </bind>
+    <bind component="sensor" as="sensor_1" x="285.0" y="495.0" width="144.0" height="84.0">
+      <map key="send_data">send_data</map>
+    </bind>
+    <bind component="ADC" as="ADC_1" x="302.0" y="646.0" width="136.0" height="98.0">
+      <map key="report">report</map>
+      <map key="response">response</map>
+      <map key="reset">reset</map>
+      <map key="send_data">send_data</map>
+    </bind>
+    <bind component="converter" as="converter_1" x="300.0" y="237.0" width="152.0" height="140.0">
+      <map key="ready">ready</map>
+      <map key="reset">reset</map>
+      <map key="done">done</map>
+      <map key="send_data">send_data</map>
+      <map key="report">report</map>
+      <map key="response">response</map>
+    </bind>
+  </component>
+</sspaceex>
+
