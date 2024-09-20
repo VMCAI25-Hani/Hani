@@ -68,7 +68,3 @@ To reproduce the results of `n-hani`
 ```bash
 stack run +RTS -N -- nopruning experiment2
 ```
-
-### Raw Data
-
-The raw data of the experimental results are available in the `data` directory.

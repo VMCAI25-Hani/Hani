@@ -1,6 +1,8 @@
 # Use Ubuntu as the base image
 FROM ubuntu:22.04
 
+ENV LANG=C.UTF-8
+
 # Avoid prompts from apt
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -44,4 +46,4 @@ WORKDIR /hani
 RUN stack build
 
 # Set the default command
-CMD ["/bin/bash", "-c", "stack run +RTS -N -- parallel experiment1 && stack run +RTS -N -- coverage experiment1"]
+CMD ["/bin/bash", "-c", "stack run +RTS -N -- parallel experiment1 && stack run +RTS -N -- coverage experiment1 && stack run +RTS -N -- parallel experiment2 && stack run +RTS -N -- sequential experiment2 && stack run +RTS -N -- nopruning experiment2"]
